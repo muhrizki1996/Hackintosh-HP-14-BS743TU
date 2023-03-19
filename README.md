@@ -10,7 +10,7 @@
 [![Release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/muhrizki1996/Hackintosh-HP-14-BS743TU/releases/latest)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.9.0-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 
-This is my complete EFI folder to be used for hackintosh on Lenovo ThinkPad X230 notebook with multibooting:
+This is my complete EFI folder to be used for hackintosh on HP 14-BS743TU notebook with multibooting:
 - macOS High Sierra 10.13.x
 - macOS Mojave 10.14.x
 - macOS Catalina 10.15.x
