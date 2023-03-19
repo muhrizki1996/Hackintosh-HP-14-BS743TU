@@ -1,13 +1,13 @@
 # Hackintosh-Lenovo-ThinkPad-X230
 
-[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf)
+[![ThinkPad](https://img.shields.io/badge/HP-14--BS743TU-blue.svg)](https://support.hp.com/sg-en/document/c06049042)
 [![MacOS High Sierra](https://img.shields.io/badge/High_Sierra-10.15-red.svg)](https://www.apple.com/)
 [![MacOS Mojave](https://img.shields.io/badge/Mojave-10.14-red.svg)](https://www.apple.com/)
 [![MacOS Catalina](https://img.shields.io/badge/Catalina-10.15-red.svg)](https://www.apple.com/)
 [![MacOS BigSur](https://img.shields.io/badge/Big_Sur-11.5-red.svg)](https://www.apple.com/)
 [![MacOS Monterey](https://img.shields.io/badge/Monterey-12.1-red.svg)](https://www.apple.com/)
 [![MacOS Ventura](https://img.shields.io/badge/Ventura-13.2.1-red.svg)](https://www.apple.com/)
-[![Release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/muhrizki1996/Hackintosh-Lenovo-ThinkPad-X230/releases/latest)
+[![Release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/muhrizki1996/Hackintosh-HP-14-BS743TU/releases/latest)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.9.0-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 
 This is my complete EFI folder to be used for hackintosh on Lenovo ThinkPad X230 notebook with multibooting:
@@ -21,7 +21,7 @@ This is my complete EFI folder to be used for hackintosh on Lenovo ThinkPad X230
 <img src="/img/Screenshot.png?raw=true" alt="macOS Screenshot" align="center">
  
 > ## How to Get
-- Clone whole repo: $ `git clone https://github.com/muhrizki1996/Hackintosh-Lenovo-HP-14-BS743TU`
+- Clone whole repo: $ `git clone https://github.com/muhrizki1996/Hackintosh-HP-14-BS743TU`
 - Download [Specific Folder](https://minhaskamal.github.io/DownGit/#/home) only.
  
 > ## Notebook Specs
@@ -60,7 +60,7 @@ This is my complete EFI folder to be used for hackintosh on Lenovo ThinkPad X230
 | Battery Indicator                    | ✅   | ECEnabler.kext |
 | WebCam HP TrueVision HD              | ✅   | Native + FaceTimeHDCam.kext for spoofing UVC WebCams as FaceTime HD (not working on macOS Big Sur and newer) |
 | USB2.0 Port + USB 3.0 Port           | ✅   | USBPorts.kext |
-| Sleep and Wake                       | ✅   | DSDT + SSDT Patch |
+| Sleep and Wake                       | ✅   | Native + SSDT Patch for Sleep while Power plugged in |
 | Mac App Store Access                 | ✅   | Native |
 | iMessage and FaceTime                | ✅   | Native |
 | HDMI Port                            | ✅   | Tested on Infocus |
