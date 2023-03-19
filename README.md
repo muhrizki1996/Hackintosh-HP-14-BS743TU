@@ -1,4 +1,4 @@
-# Hackintosh-Lenovo-ThinkPad-X230
+# Hackintosh-HP-14-BS743TU
 
 [![ThinkPad](https://img.shields.io/badge/HP-14--BS743TU-blue.svg)](https://support.hp.com/sg-en/document/c06049042)
 [![MacOS High Sierra](https://img.shields.io/badge/High_Sierra-10.15-red.svg)](https://www.apple.com/)
