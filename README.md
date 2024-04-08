@@ -6,7 +6,8 @@
 [![MacOS Catalina](https://img.shields.io/badge/Catalina-10.15-red.svg)](https://www.apple.com/)
 [![MacOS BigSur](https://img.shields.io/badge/Big_Sur-11.5-red.svg)](https://www.apple.com/)
 [![MacOS Monterey](https://img.shields.io/badge/Monterey-12.1-red.svg)](https://www.apple.com/)
-[![MacOS Ventura](https://img.shields.io/badge/Ventura-13.2.1-red.svg)](https://www.apple.com/)
+[![MacOS Ventura](https://img.shields.io/badge/Ventura-13.6.5-red.svg)](https://www.apple.com/)
+[![MacOS Sonoma](https://img.shields.io/badge/Sonoma-14.1.2-red.svg)](https://www.apple.com/)
 [![Release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/muhrizki1996/Hackintosh-HP-14-BS743TU/releases/latest)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.9.0-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest)
 
@@ -17,12 +18,16 @@ This is my complete EFI folder to be used for hackintosh on HP 14-BS743TU notebo
 - macOS Big Sur 11.x
 - macOS Monterey 12.x
 - macOS Ventura 13.x
+- macOS Sonoma 14.x
  
 <img src="/img/Screenshot.png?raw=true" alt="macOS Screenshot" align="center">
  
 > ## How to Get
 - Clone whole repo: $ `git clone https://github.com/muhrizki1996/Hackintosh-HP-14-BS743TU`
 - Download [Specific Folder](https://minhaskamal.github.io/DownGit/#/home) only.
+
+> ## Notes
+- Please Configure your BIOS like [This](/BIOS-Config.md)
  
 > ## Notebook Specs
 <img src="/img/HP-14-BS743TU.png?raw=true" alt="HP 14-BS743TU" align="right" width="433" height="325">
@@ -30,14 +35,14 @@ This is my complete EFI folder to be used for hackintosh on HP 14-BS743TU notebo
 - [x] <b>Model</b>: HP 14-BS743TU
 - [x] <b>CPU</b>: Intel® Core™ i3-6006U (2 GHz, 3 MB cache, 2 cores)
 - [x] <b>GPU</b>: Intel HD Graphics 520 @ 1GB
-- [x] <b>RAM</b>: 4 GB DDR4-2133 SDRAM (1 x 4 GB)
-- [x] <b>Storage</b>: 1TB SATA HDD @ 5400rpm (GUID Partition Table) + 120GB SATA SSD (Via HDD Caddy)
+- [x] <b>RAM</b>: 8 GB DDR4-2133 SDRAM (2 x 4 GB) / Will upgrade to Max 32 GB with 2 x 16 GB DDR4
+- [x] <b>Storage</b>: 1TB SATA HDD @ 5400rpm (GUID Partition Table) / Replace with 128 SATA SSD + 120GB SATA SSD (Via HDD Caddy)
 - [x] <b>Audio</b>: Realtek ALC282 HD Audio Controller
 - [x] <b>Wifi</b>: Realtek RTL8723DE
 - [x] <b>Ethernet</b>: Realtek RTL8168H/8111H
 - [x] <b>Bluetooth</b>: Broadcom BCM4350C2
 - [x] <b>Others</b>: 1 USB 2.0 ports, 2 USB 3.1 ports, TouchPad, VGA port, HDMI port, WebCam HP TrueVision HD, 14" diagonal HD SVA BrightView WLED-backlit (1366 x 768), 3.5mm Combo Headphone Jack, SD Media Card Reader, 4-cell, 41 Wh Li-ion Battery
-- [x] <b>BIOS</b>: xxx
+- [x] <b>BIOS Version</b>: F.41
  
 > ## EFI Contains
 - [x] <b>OpenCore binary, config.plist</b>, drivers for uefi, themes, etc..
@@ -51,20 +56,20 @@ This is my complete EFI folder to be used for hackintosh on HP 14-BS743TU notebo
 | Feature                              | Status | Dependency          |
 | :----------------------------------- | ------ | ------------------- |
 | QE/CI Enabled Graphics               | ✅   | OpenCore Inject + WhateverGreen.kext + BrightnessKeys.kext |
-| Brightness Adjustments               | ✅   | WhateverGreen.kext |
+| Brightness Adjustments               | ✅   | WhateverGreen.kext + BrightnessKeys.kext |
 | Realtek ALC282 Audio out             | ✅   | AppleALC.kext with Layout ID = 03 |
 | Realtek RTL8168H/8111H               | ✅   | RealtekRTL8111.kext |
-| Broadcom BCM4350C2 Bluetooth         | ✅   | BlueToolFixup.kext and BrcmPatchRAM.kext + bt.command |
+| Broadcom BCM4350C2 Bluetooth         | ✅   | BlueToolFixup.kext and BrcmPatchRAM.kext + bt.command (Breaks on newer macOS) |
 | Touchpad                             | ✅   | VodooPS2Controller.kext |
 | Multimedia Keys                      | ✅   | Works as on Windows / Linux |
 | Battery Indicator                    | ✅   | ECEnabler.kext |
 | WebCam HP TrueVision HD              | ✅   | Native + FaceTimeHDCam.kext for spoofing UVC WebCams as FaceTime HD (not working on macOS Big Sur and newer) |
-| USB2.0 Port + USB 3.0 Port           | ✅   | USBPorts.kext |
+| USB2.0 Port + USB 3.0 Port           | ✅   | USBPorts.kext + SSDT Patch (EC, USBX and USB-Reset) |
 | Sleep and Wake                       | ✅   | Native + SSDT Patch for Sleep while Power plugged in |
 | Mac App Store Access                 | ✅   | Native |
 | iMessage and FaceTime                | ✅   | Native |
 | HDMI Port                            | ✅   | Tested on Infocus |
-| VGA Port                             | ✅   | Tested on Asus Monitor |
+| VGA Port                             | ✅   | Tested on Asus Monitor (Will break on newer macOS) |
 | SD Card Reader                       | ✅   | Tested SanDisk 16GB SD Card |
  
 </details>
@@ -95,6 +100,7 @@ This is my complete EFI folder to be used for hackintosh on HP 14-BS743TU notebo
 | Feature                              | Status | Dependency          |
 | :----------------------------------- | ------ | ------------------- |
 | Realtek RTL8723DE                    | ❌   | Replace with TP-Link TL-WN725N with chris1111 Wireless USB OC Big Sur Adapter kext |
+| Hand Off                             | ❌   | Not working science internal Wireless + BT not supported. |
 
 </details>
  
@@ -104,7 +110,7 @@ This is my complete EFI folder to be used for hackintosh on HP 14-BS743TU notebo
 
 | Feature                              | Status | Dependency          |
 | :----------------------------------- | ------ | ------------------- |
-| Hand Off                             | ❌   | Not tested yet. |
+| Nothing for now                      | ❌   | Will report if found any. |
 
 </details>
  
